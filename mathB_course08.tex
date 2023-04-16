@@ -1,0 +1,205 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{empheq}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\setcounter{section}{8}
+\newtheorem{exmp}{Příklad}[section]
+
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+\newcommand{\vect}[1]{\bm{#1}}
+
+\newenvironment{boxx}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+
+\newsavebox{\selvestebox}
+\newenvironment{colbox}[1]
+  {\newcommand\colboxcolor{#1}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-2\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   \begin{center}
+   \colorbox[HTML]{\colboxcolor}{\usebox{\selvestebox}}
+   \end{center}}
+
+\graphicspath{{figs/}}
+
+\title{Matematika B - Cvičení 8}
+\date{}
+%\author{You}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 08. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+%\newpage
+%\section{Cvičení 8: Lokální extrémy funkcí}
+%Lokální extrémy funkce 2 proměnných (stacionární body, Hessova matice). Metoda nejmenších čtverců.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Extremálnost bodu}\nonumber
+        \vspace{2mm}
+        Pokud pro danou funkci $f(x,y)$ platí v bodě $(x_0, y_0)$ následující podmínka
+        \begin{align}
+            \frac{\partial f}{\partial x}(x_0, y_0)=0 \quad \land \quad \frac{\partial f}{\partial y}(x_0, y_0)=0,
+        \end{align}
+        potom bod $(x_0, y_0)$ nazýváme \textbf{stacionárním bodem} funkce $f(x,y)$. Další rozhodování o extremálnosti leží ve vyčíslení Hessiánu $H_f(x,y)$, který je definovám jako determinant Hessovy matice
+        \begin{align}
+            \begin{pmatrix}
+                \frac{\partial^2 f}{\partial x^2}(x, y) & \frac{\partial^2 f}{\partial x\partial y}(x, y) \\
+                \frac{\partial^2 f}{\partial y\partial x}(x, y) &
+                \frac{\partial^2 f}{\partial y^2}(x, y).
+            \end{pmatrix}
+        \end{align}
+        Tedy Hessián lze vyjádřit jako
+        \begin{align}
+            H_f(x,y)=\frac{\partial^2 f}{\partial x^2}\frac{\partial^2 f}{\partial y^2}-\left(\frac{\partial^2 f}{\partial x\partial y}\right)^2.
+        \end{align}
+        Potom platí:
+        \begin{enumerate}
+            \item Je-li $H_f(x_0, y_0)>0$ má funkce $f$ v bodě $(x_0, y_0)$\ potom
+                \begin{enumerate}
+                    \item $\frac{\partial^2 f}{\partial x^2}(x_0, y_0)>0$ má funkce v bodě $(x_0, y_0)$ ostré lokální minimum,
+                    \item $\frac{\partial^2 f}{\partial x^2}(x_0, y_0)<0$ má funkce v bodě $(x_0, y_0)$ ostré lokální maximum.
+                \end{enumerate}
+            \item Je-li $H_f(x_0, y_0)<0$ má funkce $f$ v bodě $(x_0, y_0)$ sedlový bod
+            \item Je-li $H_f(x_0, y_0)=0$ nevíme zda má $f$ v bodě $(x_0, y_0)$ lokální extrém
+        \end{enumerate}
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Určete lokální extrémy funkce $f(x,y)=xy\e{x-y^2/2}$.
+\end{exmp}
+\end{colbox}
+Podezřelé body: $(x_0, y_0)=(0, 0); (x_1, y_1)=(-1, 1); (x_2, y_2)=(-1, -1)$
+\begin{center}
+%\centering
+\begin{tabular}{cccc}
+    \centering
+    Podezřelý bod & Hessova matice & Hessián & Klasifikace \\
+    \hline
+    Bod $(0, 0)$ & $\bar{H}=
+    \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix} $ & $H_f=-1$ & Sedlo \\
+    Bod $(-1, 1)$ & $\bar{H}=
+    \begin{pmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{pmatrix} $ & $H_f=2$ & Lokální minimum \\
+    Bod $(-1, -1)$ & $\bar{H}=
+    \begin{pmatrix}
+        -1 & 0 \\
+        0 & -2
+    \end{pmatrix} $ & $H_f=2$ & Lokální maximum \\
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Určete lokální extrémy funkce $f(x,y)=xy\e{x-y^2/2}$.
+\end{exmp}
+\end{colbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{ADD8E6}
+\textbf{Cvičení:}
+\end{colbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Metoda nejmenších čtverců}\nonumber
+        \vspace{2mm}
+        Pokud dvojicí získaných dat $\{x_i, y_i\}_{i=1}^n$ chci proložit co nejlépe lineární křivku $y=ax+b$, potom lze parametry $a, b$ najít optimalizační úlohou. Uvažujme nejprve, že celková chyba $e(a,b)$ je dána jako čtverec rozdílu mezi změřenými a odhadovanými daty, tedy
+        \begin{align*}
+            e(a,b)=\sum_{i=1}^n\left(ax_i + b - y_i\right)^2,
+        \end{align*}
+        potom hledám nejlepší parametry $a^*, b^*$ takové, že minimalizují celkovou chybu. Tedy pro tyto parametry musí platit:
+        \begin{align*}
+            \frac{\partial e}{\partial a}(a^*, b^*)=0,\quad\land\quad \frac{\partial e}{\partial b}(a^*, b^*)=0,
+        \end{align*}
+        Tedy
+        \begin{align*}
+            2\sum_{i=1}^n\left(ax_i + b - y_i\right)x_i=0, \\
+            2\sum_{i=1}^n\left(ax_i + b - y_i\right)=0.
+        \end{align*}
+        A po úpravě konečně dostáváme soustavu
+        \begin{align*}
+            a\sum_{i=1}^n x_i^2 + b\sum_{i=1}^n x_i&=\sum_{i=1}^n x_iy_i, \\
+            a\sum_{i=1}^n x_i + bn&=\sum_{i=1}^n y_i\\
+        \end{align*}
+        
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Metodou nejmenších čtverců aproximujte data křivkou $y=ax+b$.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $x_i$ & 0 & 1 & 3 & 5 & 6 \\
+    \hline
+    $y_i$ & 5 & 3 & 3 & 2 & 1 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\end{exmp}
+\end{colbox}
+
+Řešení: $y=-0.538x + 4.415$
+
+
+\end{document}

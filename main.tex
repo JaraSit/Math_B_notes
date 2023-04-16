@@ -1,0 +1,498 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{empheq}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Příklad}[section]
+
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+\newcommand{\vect}[1]{\bm{#1}}
+
+\newenvironment{boxx}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+
+\newsavebox{\selvestebox}
+\newenvironment{colbox}[1]
+  {\newcommand\colboxcolor{#1}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-2\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   \begin{center}
+   \colorbox[HTML]{\colboxcolor}{\usebox{\selvestebox}}
+   \end{center}}
+
+\graphicspath{{figs/}}
+
+\title{Matematika B}
+%\author{You}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%
+%% SYLABUS
+%%%%%%%%%%%%%%%%%%%%
+\section*{Sylabus}
+\begin{enumerate}
+    \item Vektory a matice, operace s vektory, lineární kombinace vektorů, lineární závislost a nezávislost, operace s maticemi, hodnost matice (i s parametrem). Soustavy lin. algebraických rovnic. Frobeniova věta.
+    \item Soustavy lin. algebraických rovnic s parametrem. Determinanty, inverzní matice, výpočet inverzní matice, maticové rovnice. Vlastní čísla matic, určování vl. čísel a vl. vektorů matice - stačí 2x2. Neučí se Cramerovo pravidlo.
+    \item Stručně geometrie v Rn (zejména v R2 a v R3). Metrika a norma vektoru v Euklidovském prostoru, význam skalárního a vektorového součinu. Parametrické rovnice přímky a roviny, obecná rovnice nadroviny. Geometrický význam soustav lin. algebraických rovnic. Příklady na vzájemnou polohu, vzdálenosti. Neučí se úhel vektorů a tedy ani odchylky přímek a rovin - pouze kolmost.
+    \item Vlastnosti množin v Euklidovském prostoru (otevřená, uzavřená, omezená konvexní, obloukově souvislá). Funkce n reálných proměnných a její definiční obor.
+    \item Graf funkce 2 proměnných, vrstevnice. Spojitost a limita jen velmi okrajově (na cvičeních lze i zcela vynechat). Zobrazení z Rn do Rk.
+    \item Parciální derivace funkce více proměnných, gradient, derivace ve směru, derivace zobrazení (=Jakobiho matice). Derivování složených funkcí.
+    \item Aplikace derivací funkce 2 proměnných (tečná rovina, totální diferenciál, Taylorův polynom, Newtonova metoda pro soustavy 2 rovnic).
+    \item Lokální extrémy funkce 2 proměnných (stacionární body, Hessova matice). Metoda nejmenších čtverců.
+    \item Implicitně zadané funkce (1 a 2 proměnných), derivace implicitně zadané funkce.
+    \item Křivky zadané parametricky v R2 a v R3, orientace křivky. Vektorové pole v R2 a v R3. Křivkový integrálvektorového pole, práce síly. Neučí se křivkový integrál skalárního pole.
+    \item Nezávislost křivkového integrálu na integrační cestě. Potenciál vektorového pole. Určování potenciálu v R2 a v R3. Neučí se pojem jednoduše souvislá oblast, místo ní uvádíme slabší větu pro konvexní oblast.
+    \item Dvojný integrál a jeho geometrický význam. Výpočet dvojného integrálu postupnou integrací - Fubiniova věta. Polární souřadnice. Substituce pro dvojný integrál (stačí jen do polárních souřadnic. Neučí se trojný integrál.
+    \item Soustavy dvou diferenciálních rovnic 1.řádu. Řešení autonomních soustav lineárních diferenciálních rovnic s konstantními koeficienty. Stačí jen pro 2 různá reálná či komplexní vlastní čísla, případ dvojnásobného vlastního čísla se neučí.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 01. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cvičení 1: Vektory a matice}
+Vektory a matice, operace s vektory, lineární kombinace vektorů, lineární závislost a nezávislost, operace s maticemi, hodnost matice (i s parametrem). Soustavy lin. algebraických rovnic. Frobeniova věta.
+
+\begin{boxx}
+This text is formatted within the \texttt{boxed} environment.
+\end{boxx}
+
+\begin{colbox}{DDDDDD}
+\textbf{Příklad: }\\ \textit{some text here}
+\end{colbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 02. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 03. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 04. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 05. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 06. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 07. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 7}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 08. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cvičení 8: Lokální extrémy funkcí}
+%Lokální extrémy funkce 2 proměnných (stacionární body, Hessova matice). Metoda nejmenších čtverců.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Extremálnost bodu}\nonumber
+        \vspace{2mm}
+        Pokud pro danou funkci $f(x,y)$ platí v bodě $(x_0, y_0)$ následující podmínka
+        \begin{align}
+            \frac{\partial f}{\partial x}(x_0, y_0)=0 \quad \land \quad \frac{\partial f}{\partial y}(x_0, y_0)=0,
+        \end{align}
+        potom bod $(x_0, y_0)$ nazýváme \textbf{stacionárním bodem} funkce $f(x,y)$. Další rozhodování o extremálnosti leží ve vyčíslení Hessiánu $H_f(x,y)$, který je definovám jako determinant Hessovy matice
+        \begin{align}
+            \begin{pmatrix}
+                \frac{\partial^2 f}{\partial x^2}(x, y) & \frac{\partial^2 f}{\partial x\partial y}(x, y) \\
+                \frac{\partial^2 f}{\partial y\partial x}(x, y) &
+                \frac{\partial^2 f}{\partial y^2}(x, y).
+            \end{pmatrix}
+        \end{align}
+        Tedy Hessián lze vyjádřit jako
+        \begin{align}
+            H_f(x,y)=\frac{\partial^2 f}{\partial x^2}\frac{\partial^2 f}{\partial y^2}-\left(\frac{\partial^2 f}{\partial x\partial y}\right)^2.
+        \end{align}
+        Potom platí:
+        \begin{enumerate}
+            \item Je-li $H_f(x_0, y_0)>0$ má funkce $f$ v bodě $(x_0, y_0)$\ potom
+                \begin{enumerate}
+                    \item $\frac{\partial^2 f}{\partial x^2}(x_0, y_0)>0$ má funkce v bodě $(x_0, y_0)$ ostré lokální minimum,
+                    \item $\frac{\partial^2 f}{\partial x^2}(x_0, y_0)<0$ má funkce v bodě $(x_0, y_0)$ ostré lokální maximum.
+                \end{enumerate}
+            \item Je-li $H_f(x_0, y_0)<0$ má funkce $f$ v bodě $(x_0, y_0)$ sedlový bod
+            \item Je-li $H_f(x_0, y_0)=0$ nevíme zda má $f$ v bodě $(x_0, y_0)$ lokální extrém
+        \end{enumerate}
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Určete lokální extrémy funkce $f(x,y)=xy\e{x-y^2/2}$.
+\end{exmp}
+\end{colbox}
+Podezřelé body: $(x_0, y_0)=(0, 0); (x_1, y_1)=(-1, 1); (x_2, y_2)=(-1, -1)$
+\begin{center}
+%\centering
+\begin{tabular}{cccc}
+    \centering
+    Podezřelý bod & Hessova matice & Hessián & Klasifikace \\
+    \hline
+    Bod $(0, 0)$ & $\bar{H}=
+    \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix} $ & $H_f=-1$ & Sedlo \\
+    Bod $(-1, 1)$ & $\bar{H}=
+    \begin{pmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{pmatrix} $ & $H_f=2$ & Lokální minimum \\
+    Bod $(-1, -1)$ & $\bar{H}=
+    \begin{pmatrix}
+        -1 & 0 \\
+        0 & -2
+    \end{pmatrix} $ & $H_f=2$ & Lokální maximum \\
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Určete lokální extrémy funkce $f(x,y)=xy\e{x-y^2/2}$.
+\end{exmp}
+\end{colbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{ADD8E6}
+\textbf{Cvičení:}
+\end{colbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Metoda nejmenších čtverců}\nonumber
+        \vspace{2mm}
+        Pokud dvojicí získaných dat $\{x_i, y_i\}_{i=1}^n$ chci proložit co nejlépe lineární křivku $y=ax+b$, potom lze parametry $a, b$ najít optimalizační úlohou. Uvažujme nejprve, že celková chyba $e(a,b)$ je dána jako čtverec rozdílu mezi změřenými a odhadovanými daty, tedy
+        \begin{align*}
+            e(a,b)=\sum_{i=1}^n\left(ax_i + b - y_i\right)^2,
+        \end{align*}
+        potom hledám nejlepší parametry $a^*, b^*$ takové, že minimalizují celkovou chybu. Tedy pro tyto parametry musí platit:
+        \begin{align*}
+            \frac{\partial e}{\partial a}(a^*, b^*)=0,\quad\land\quad \frac{\partial e}{\partial b}(a^*, b^*)=0,
+        \end{align*}
+        Tedy
+        \begin{align*}
+            2\sum_{i=1}^n\left(ax_i + b - y_i\right)x_i=0, \\
+            2\sum_{i=1}^n\left(ax_i + b - y_i\right)=0.
+        \end{align*}
+        A po úpravě konečně dostáváme soustavu
+        \begin{align*}
+            a\sum_{i=1}^n x_i^2 + b\sum_{i=1}^n x_i&=\sum_{i=1}^n x_iy_i, \\
+            a\sum_{i=1}^n x_i + bn&=\sum_{i=1}^n y_i\\
+        \end{align*}
+        
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Metodou nejmenších čtverců aproximujte data křivkou $y=ax+b$.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $x_i$ & 0 & 1 & 3 & 5 & 6 \\
+    \hline
+    $y_i$ & 5 & 3 & 3 & 2 & 1 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\end{exmp}
+\end{colbox}
+
+Řešení: $y=-0.538x + 4.415$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 09. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cvičení 9: Implicitně definované funkce}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Existence implicitně zadané funkce}\nonumber
+        \vspace{2mm}
+        Pokud platí, že funkce $y=f(x)$ je zadána implicitně jako $F(x,y)=0$ na nějakém okolí bodu $(x_0, y_0)$, potom v tomto bodu musí platit
+        \begin{align}
+            F(x_0, y_0)=0 \quad \land \quad \frac{\partial F}{\partial y}(x_0, y_0)\neq 0
+        \end{align}
+        Jsou-li naplněny všechny požadavky na funkci a její spojitost, pak je derivace funkce $f$ definována vztahem
+        \begin{align}
+            f'(x)=-\frac{\frac{\partial F}{\partial x}(x, f(x))}{\frac{\partial F}{\partial y}(x, f(x))}
+        \end{align}
+        Podobně platí, že v okolí bodu $(x_0, y_0, z_0)$ rovnice $F(x,y,z)=0$ definuje implicitně zadanou funkci dvou proměnných $z=f(x,y)$ pokud
+        \begin{align}
+            F(x_0, y_0, z_0)=0 \quad \land \quad \frac{\partial F}{\partial z}(x_0, y_0, z_0)\neq 0
+        \end{align}
+        Obdobně jsou také definovány derivace funkce $f$ jako
+        \begin{align}
+            \frac{\partial f}{\partial x}(x,y)=-\frac{\frac{\partial F}{\partial x}(x, y, f(x, y))}{\frac{\partial F}{\partial z}(x, y f(x, y))}, \quad
+            \frac{\partial f}{\partial y}(x,y)=-\frac{\frac{\partial F}{\partial y}(x, y, f(x, y))}{\frac{\partial F}{\partial z}(x, y f(x, y))}.
+        \end{align}
+        Pro výpočet derivací je často výhodnější použít jiný postup. Vezmeme rovnici $F(x, y)=0$ a dosadíme $y=f(x)$, čímž získáme funkci jedné proměnné $F(x, f(x))=0$. Tu ale nyní derivovat podle $x$. 
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Implicitně zadaná funkce $y^3 + 1 = xy$ v okolí bodu $(2, 1)$.
+\end{exmp}
+\end{colbox}
+Řešení: $y'=\frac{y}{3y^2-x}, y''=\frac{-2xy}{(3y^2-x)^3}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Implicitně definovaná funkce $\text{cos}\left(4x-y\right)=\frac{\sqrt{2}}{2}$ v okolí bodu $\left(\frac{\pi}{12}, \frac{\pi}{12}\right)$.
+\end{exmp}
+\end{colbox}
+%Řešení: $y'=\frac{y}{3y^2-x}, y''=\frac{-2xy}{(3y^2-x)^3}$
+%Implicitně zadané funkce (1 a 2 proměnných), derivace implicitně zadané funkce.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 10. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cvičení 10: Parametrické křivky a křivkový integrál}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+    Křivka $\mathcal{K}$ je grafem funkce $y=\e{-x}, x\in \langle 0, 3\rangle$ a je orientovaná souhlasně s klesajícím $x$. Křivku $\mathcal{K}$ nakreslete včetně orientace a napište nějakou její parametrizaci.
+\end{exmp}
+\end{colbox}
+
+Hledaná parametrizace je
+\begin{align*}
+    \vect{r}(t) = (-t, \e{t}),\quad t\in \langle -3, 0\rangle 
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+    Napište parametrické rovnice kružnice zadané obecnou rovnici 
+    \begin{align*}
+        x^2 + y^2 -6x - 8y = 0.
+    \end{align*}
+    Ověřte, zda kružnice prochází počátkem kartézské soustavy souřadnic.
+\end{exmp}
+\end{colbox}
+
+Úpravou dostáváme středový tvar
+\begin{align*}
+    (x-3)^2 + (y-4)^2=25
+\end{align*}
+Parametrické rovnice jsou 
+\begin{align*}
+    x=5\text{cos}t + 3,\\
+    y=5\text{sin}t + 4,\\
+    t\in \langle 0, 2\pi\rangle
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+    Napište parametrické rovnice úsečky dané počátečním bodem $A=(1, \sqrt{2})$ a koncovým bodem $B=(\sqrt{8}, \sqrt{8})$.
+\end{exmp}
+\end{colbox}
+
+Dostáváme 
+\begin{align*}
+    r(t)=A + (B-A)t, \\
+    x(t)=1 + (\sqrt{8} - 1)t,\\
+    y(t)=\sqrt{2} + \sqrt{2}t,\\
+    t\in \langle 0, 1\pi\rangle
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Křivkový integrál}\nonumber
+        \vspace{2mm}
+        \begin{align*}
+        \int_\mathcal{K}\vect{F}\,\mathrm{d}\vect{r}=\int_a^b\vect{F}(\vect{r}(t))\cdot\vect{r}'(t)\,\mathrm{d}t
+        \end{align*}
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+    Vypočítejte křivkový integrál z vektorové funkce $F(x,y,z)=(y^2-z^2, 2yz, -x^2)$ podél kladně orientované křivky s parametrizací $r(t)=(t, t^2, t^3), t\in\langle 0,1\rangle$.
+\end{exmp}
+\end{colbox}
+Řešení: 
+\begin{align*}
+    \int_\mathcal{K}\vect{F}\,\mathrm{d}\vect{r}=\frac{1}{35}
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+    Vypočítejte křivkový integrál z vektorové funkce $F(x,y)=(y,x)$ podél čtvrtkružnice $x^2+y^2=a^2, x\geq 0, y\geq 0, a> 0$ s počátečním bodem $(a, 0)$ a koncovým bodem $(0,a)$.
+\end{exmp}
+\end{colbox}
+Řešení: 
+\begin{align*}
+    \int_\mathcal{K}\vect{F}\,\mathrm{d}\vect{r}=0
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+    Vypočítejte křivkový integrál z vektorové funkce $F(x,y)=(x^2+y^2,x^2-y^2)$ podél křivky $y=1-|1-x|, x in \langle 0,2\rangle$ s počátečním bodem $(0, 0)$.
+\end{exmp}
+\end{colbox}
+Řešení: 
+\begin{align*}
+    \int_\mathcal{K}\vect{F}\,\mathrm{d}\vect{r}=\frac{4}{3}
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 11. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 11}
+
+Nez ávislost křivkov ého integr álu na integrační cestě. Potenciál vektorového pole. Určování potenciálu v R2 a v R3. Neučí se pojem jednoduše souvislá oblast, místo ní uvádíme slabší větu pro konvexní oblast.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 12. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 13. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\newpage
+\section{Cviceni 13}
+
+
+\end{document}

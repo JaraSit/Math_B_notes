@@ -1,0 +1,124 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{empheq}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Příklad}[section]
+\setcounter{section}{11}
+
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+\newcommand{\vect}[1]{\bm{#1}}
+
+\newenvironment{boxx}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+
+\newsavebox{\selvestebox}
+\newenvironment{colbox}[1]
+  {\newcommand\colboxcolor{#1}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-2\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   \begin{center}
+   \colorbox[HTML]{\colboxcolor}{\usebox{\selvestebox}}
+   \end{center}}
+
+\graphicspath{{figs/}}
+
+\title{Matematika B - Cvičení 11}
+\date{}
+%\author{You}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 11. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+%\newpage
+%\section{Cvičení 9: Implicitně definované funkce}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Existence implicitně zadané funkce}\nonumber
+        \vspace{2mm}
+        Vektorové pole $F$ se nazývá potenciální, pokud postupně všechny jeho složky lze získat příslušnou derivací určité funkce $U$, kterou nazýváme potenciálem. Např. pro dvourozměrný případ musí platit
+        \begin{align*}
+            F_1=\frac{\partial U}{\partial x}, \quad F_2=\frac{\partial U}{\partial y}, \quad \text{pro } F=(F_1, F_2)
+        \end{align*}
+        Podobně pro tří dimensionální funkci $F$ platí, že je potenciální pokud
+        \begin{align*}
+            F_1=\frac{\partial U}{\partial x}, \quad F_2=\frac{\partial U}{\partial y}, \quad
+            F_3=\frac{\partial U}{\partial z}, \quad \text{pro } F=(F_1, F_2, F_3)
+        \end{align*}
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Ověřte, že funkce $U(x,y)=x^2y + \frac{y^3}{3}$ je potenciálem vektorového pole $F(x,y)=(2xy, x^2+y^2)$
+\end{exmp}
+\end{colbox}
+Řešení: Ano
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Nezávislost na integrační cestě}\nonumber
+        \vspace{2mm}
+        $\int_\mathcal{K}F\cdot\mathrm{d}r$ nezávisí na integrační cestě, pouze na poloze počátečního a koncového bodu cesty, právě tehdy, když je $F$ potenciální.
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Potenciální pole}\nonumber
+        \vspace{2mm}
+            Jestliže platí 
+            \begin{align*}
+                \frac{\partial F_1}{\partial y} = \frac{\partial F_2}{\partial x}, \quad \text{pro } n=2 \\ 
+                \frac{\partial F_1}{\partial y} = \frac{\partial F_2}{\partial x}, \frac{\partial F_1}{\partial z} = \frac{\partial F_3}{\partial x}, \frac{\partial F_2}{\partial z} = \frac{\partial F_3}{\partial y}, \quad \text{pro } n=3,
+            \end{align*}
+            potom je $F$ potenciální.
+    }%
+}
+
+
+\end{document}

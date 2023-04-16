@@ -1,0 +1,116 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{empheq}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Příklad}[section]
+\setcounter{section}{9}
+
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+\newcommand{\vect}[1]{\bm{#1}}
+
+\newenvironment{boxx}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+
+\newsavebox{\selvestebox}
+\newenvironment{colbox}[1]
+  {\newcommand\colboxcolor{#1}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-2\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   \begin{center}
+   \colorbox[HTML]{\colboxcolor}{\usebox{\selvestebox}}
+   \end{center}}
+
+\graphicspath{{figs/}}
+
+\title{Matematika B - Cvičení 9}
+\date{}
+%\author{You}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 09. CVICENI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+%\newpage
+%\section{Cvičení 9: Implicitně definované funkce}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TEORIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \framebox[1.0\columnwidth]{Existence implicitně zadané funkce}\nonumber
+        \vspace{2mm}
+        Pokud platí, že funkce $y=f(x)$ je zadána implicitně jako $F(x,y)=0$ na nějakém okolí bodu $(x_0, y_0)$, potom v tomto bodu musí platit
+        \begin{align}
+            F(x_0, y_0)=0 \quad \land \quad \frac{\partial F}{\partial y}(x_0, y_0)\neq 0
+        \end{align}
+        Jsou-li naplněny všechny požadavky na funkci a její spojitost, pak je derivace funkce $f$ definována vztahem
+        \begin{align}
+            f'(x)=-\frac{\frac{\partial F}{\partial x}(x, f(x))}{\frac{\partial F}{\partial y}(x, f(x))}
+        \end{align}
+        Podobně platí, že v okolí bodu $(x_0, y_0, z_0)$ rovnice $F(x,y,z)=0$ definuje implicitně zadanou funkci dvou proměnných $z=f(x,y)$ pokud
+        \begin{align}
+            F(x_0, y_0, z_0)=0 \quad \land \quad \frac{\partial F}{\partial z}(x_0, y_0, z_0)\neq 0
+        \end{align}
+        Obdobně jsou také definovány derivace funkce $f$ jako
+        \begin{align}
+            \frac{\partial f}{\partial x}(x,y)=-\frac{\frac{\partial F}{\partial x}(x, y, f(x, y))}{\frac{\partial F}{\partial z}(x, y f(x, y))}, \quad
+            \frac{\partial f}{\partial y}(x,y)=-\frac{\frac{\partial F}{\partial y}(x, y, f(x, y))}{\frac{\partial F}{\partial z}(x, y f(x, y))}.
+        \end{align}
+        Pro výpočet derivací je často výhodnější použít jiný postup. Vezmeme rovnici $F(x, y)=0$ a dosadíme $y=f(x)$, čímž získáme funkci jedné proměnné $F(x, f(x))=0$. Tu ale nyní derivovat podle $x$. 
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Implicitně zadaná funkce $y^3 + 1 = xy$ v okolí bodu $(2, 1)$.
+\end{exmp}
+\end{colbox}
+Řešení: $y'=\frac{y}{3y^2-x}, y''=\frac{-2xy}{(3y^2-x)^3}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PŘÍKLAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{colbox}{DDDDDD}
+\begin{exmp}
+Implicitně definovaná funkce $\text{cos}\left(4x-y\right)=\frac{\sqrt{2}}{2}$ v okolí bodu $\left(\frac{\pi}{12}, \frac{\pi}{12}\right)$.
+\end{exmp}
+\end{colbox}
+%Řešení: $y'=\frac{y}{3y^2-x}, y''=\frac{-2xy}{(3y^2-x)^3}$
+%Implicitně zadané funkce (1 a 2 proměnných), derivace implicitně zadané funkce.
+
+\end{document}
